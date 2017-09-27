@@ -16,12 +16,12 @@
       <%
         int hrsWorked = Integer.parseInt(request.getParameter("hrsworked"));
         int hrRate = Integer.parseInt(request.getParameter("hrpay"));
-        int preTaxDeduct = Integer.parseInt(request.getParameter("pretax"));
-        int postTaxDeduct = Integer.parseInt(request.getParameter("posttax"));
+        double preTaxDeduct = Integer.parseInt(request.getParameter("pretax"));
+        double postTaxDeduct = Integer.parseInt(request.getParameter("posttax"));
         int regularHours;
-        int OverHours;
-        double OverPayRate;
-        double OverPay;
+        int overHours;
+        double overPayRate;
+        double overPay;
         double regularPay;
         double grossPay;
         double taxAmount;
@@ -31,18 +31,18 @@
     if (hrsWorked > 40)
     {
     regularHours = 40;
-    OverHours = hrsWorked - 40;
-    OverPayRate = hrRate * 1.5;
-    OverPay = OverHours * OverPayRate;
+    overHours = hrsWorked - 40;
+    overPayRate = hrRate * 1.5;
+    overPay = overHours * overPayRate;
     regularPay = regularHours * hrRate;
-    grossPay = regularPay + OverPay;
+    grossPay = regularPay + overPay;
     }
     
     
    else {
     grossPay = hrsWorked * hrRate;
-    OverHours = 0;
-    OverPayRate = 0;
+    overHours = 0;
+    overPayRate = 0;
          }
         
         double taxablePay = grossPay - preTaxDeduct;
@@ -75,52 +75,52 @@
                 
                  <tr>
                     <td>Hourly Rate:</td>
-                    <td><%= hrRate %></td>
+                    <td>$<%= hrRate %></td>
                 </tr>
                 
                 <tr>
                     <td># Hours Overtime:</td>
-                    <td><%= OverHours %></td>
+                    <td><%= overHours %></td>
                 </tr>
                 
                 <tr>
                     <td>Overtime Hourly Rate:</td>
-                    <td><%= OverPayRate %></td>
+                    <td>$<%= overPayRate %></td>
                 </tr>
                 
                 <tr>
                     <td>Gross Pay:</td>
-                    <td><%= grossPay %></td>
+                    <td>$<%= grossPay %></td>
                 </tr>
                 
                 <tr>
                     <td>Pre-tax Deduct:</td>
-                    <td><%= preTaxDeduct %></td>
+                    <td>$<%= preTaxDeduct %></td>
                 </tr>
                 
                 <tr>
                     <td>Pre-tax Pay:</td>
-                    <td><%= taxablePay %></td>
+                    <td>$<%= taxablePay %></td>
                 </tr>
                 
                 <tr>
                     <td>Tax Amount:</td>
-                    <td><%= taxAmount %></td>
+                    <td>$<%= taxAmount %></td>
                 </tr>
                 
                 <tr>
                     <td>Post-tax Pay:</td>
-                    <td><%= postTaxPay %></td>
+                    <td>$<%= postTaxPay %></td>
                 </tr>
                 
                 <tr>
                     <td>Post-tax Deduct:</td>
-                    <td><%= postTaxDeduct %></td>
+                    <td>$<%= postTaxDeduct %></td>
                 </tr>
                 
                 <tr>
                     <td>Net Pay:</td>
-                    <td><%= netPay %></td>
+                    <td>$<%= netPay %></td>
                 </tr>
                 
                 

@@ -8,6 +8,6 @@ and open the template in the editor.
     Author     : Paris Guo
 */
 
-body {background-color: blue; color: white; font-style:sans-serif; font-size: 14px; }
+body {background-color: teal; color: white; font-style:sans-serif; font-size: 14px; }
 h1{font-size: 25px;}
-.table{border:"1"}
+.table{border:'1';}
