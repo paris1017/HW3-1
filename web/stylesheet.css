@@ -5,6 +5,9 @@ and open the template in the editor.
 */
 /* 
     Created on : Sep 27, 2017, 9:14:45 AM
-    Author     : guohuinan
+    Author     : Paris Guo
 */
 
+body {background-color: blue; color: white; font-style:sans-serif; font-size: 14px; }
+h1{font-size: 25px;}
+.table{border:"1"}

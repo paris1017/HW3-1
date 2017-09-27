@@ -18,26 +18,31 @@
         <form name="infoFrom" action="results.jsp" method="post">
             <table border="1">
                 <tbody>
+                    
                     <tr>
                         <td>Hours Worked:</td>
                         <td><input type="text" name="hrsworked" value="" size="50"/></td>
                     </tr>
+                    
                     
                     <tr>
                         <td>Hourly Pay:</td>
                         <td><input type="text" name="hrpay" value="" size="50"/></td>
                     </tr>
                     
+                    
                     <tr>
                         <td>Pre-tax Deduct:</td>
                         <td><input type="text" name="pretax" value="" size="50"/></td>
                     </tr>
+                    
                     
                     <tr>
                         <td>Post-tax Deduct:</td>
                         <td><input type="text" name="posttax" value="" size="50"/></td>
                     </tr>
                    
+                    
                     </tbody>
              </table>
             
