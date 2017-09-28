@@ -15,7 +15,7 @@
     
       <%
         int hrsWorked = Integer.parseInt(request.getParameter("hrsworked"));
-        int hrRate = Integer.parseInt(request.getParameter("hrpay"));
+        int hrPay = Integer.parseInt(request.getParameter("hrpay"));
         double preTaxDeduct = Integer.parseInt(request.getParameter("pretax"));
         double postTaxDeduct = Integer.parseInt(request.getParameter("posttax"));
         int regularHours;
@@ -32,22 +32,22 @@
     {
     regularHours = 40;
     overHours = hrsWorked - 40;
-    overPayRate = hrRate * 1.5;
+    overPayRate = hrPay * 1.5;
     overPay = overHours * overPayRate;
-    regularPay = regularHours * hrRate;
+    regularPay = regularHours * hrPay;
     grossPay = regularPay + overPay;
     }
     
     
    else {
-    grossPay = hrsWorked * hrRate;
+    grossPay = hrsWorked * hrPay;
     overHours = 0;
     overPayRate = 0;
-         }
+    }  
         
         double taxablePay = grossPay - preTaxDeduct;
         
-        if (grossPay < 500){
+        if (grossPay < 500) {
             taxAmount = taxablePay * 0.18;
         }
         
@@ -64,7 +64,7 @@
         
     
     <body>
-        <h1>Salary Info</h1>
+        <h1>Salary Information</h1>
         <hr>
         <table border="1">
             <tbody>
@@ -75,7 +75,7 @@
                 
                  <tr>
                     <td>Hourly Rate:</td>
-                    <td>$<%= hrRate %></td>
+                    <td>$<%= hrPay %></td>
                 </tr>
                 
                 <tr>
@@ -127,8 +127,5 @@
             </tbody>>
         </table>
     </body>
-    
-    
-    
-    
+      
 </html>
